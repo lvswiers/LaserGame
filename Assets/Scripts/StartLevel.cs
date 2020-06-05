@@ -4,11 +4,11 @@ using System.Collections;
 public class StartLevel : MonoBehaviour {
 
     public Grid Grid;
-    public float xRotation;
-    public float yRotation;
-    public float zRotation;
+    public float XRotation;
+    public float YRotation;
+    public float ZRotation;
 
     void Start() {
-        Grid.gameObject.transform.Rotate(xRotation, yRotation, zRotation);
+        Grid.gameObject.transform.Rotate(XRotation, YRotation, ZRotation);
     }
 }

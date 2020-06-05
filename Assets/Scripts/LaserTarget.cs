@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using Interfaces;
 
-public class LaserTarget : MonoBehaviour {
+public class LaserTarget : MonoBehaviour, EventGenerator {
 
     private string tag = "Bullet";
+    public event EventHandler Event;
     
     private bool destroyBullet(Collision collision) {
         GameObject collisionObject = collision.gameObject;
@@ -14,7 +17,6 @@ public class LaserTarget : MonoBehaviour {
         } else {
             return false;
         }
-       
     }
 
     private void changeColour() {
@@ -23,12 +25,17 @@ public class LaserTarget : MonoBehaviour {
         material.SetColor("_Color",new Color(0.2f, 0.5f, 0));
     }
 
+    private void raiseSuccess() {
+        Event(this, EventArgs.Empty);
+    }
+
     // Update is called once per frame
     void OnCollisionEnter(Collision collision) {
         bool isDestroyed = destroyBullet(collision);
 
         if (isDestroyed){
             changeColour();
+            raiseSuccess();
         }
     }
 }

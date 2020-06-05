@@ -7,13 +7,9 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     public float speed;
     public Direction direction;
-   
-    private float actualSpeed;
-    private Direction currentDirection;
 
-    private void Start() {
-        actualSpeed = speed; // todo: check if positive or enforce
-    }
+    private float actualSpeed = 0;
+    private Direction currentDirection;
 
     // Update is called once per frame
     void Update() {
@@ -64,6 +60,10 @@ public class Projectile : MonoBehaviour
                 currentDirection = Direction.RIGHT;
                 break;
         }
+    }
+
+    public void StartMoving() {
+        actualSpeed = speed; // todo: check if positive or enforce
     }
 
 }
