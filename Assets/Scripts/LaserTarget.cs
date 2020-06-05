@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using Interfaces;
+using Styling;
 
 public class LaserTarget : MonoBehaviour, EventGenerator {
 
@@ -22,7 +23,7 @@ public class LaserTarget : MonoBehaviour, EventGenerator {
     private void changeColour() {
         var rend = GetComponent<Renderer>();
         Material material = rend.material;
-        material.SetColor("_Color",new Color(0.2f, 0.5f, 0));
+        material.SetColor("_Color", Colours.Green);
     }
 
     private void raiseSuccess() {
