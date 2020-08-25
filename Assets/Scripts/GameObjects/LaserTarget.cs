@@ -4,39 +4,41 @@ using System;
 using Interfaces;
 using Styling;
 
-public class LaserTarget : MonoBehaviour, EventGenerator {
+namespace GameObjects {
+    public class LaserTarget : MonoBehaviour, EventGenerator {
 
-    private string tag = "Bullet";
-    public event EventHandler Event;
-    
-    private bool destroyBullet(Collision collision) {
-        GameObject collisionObject = collision.gameObject;
+        private string tag = "Bullet";
+        public event EventHandler Event;
+        
+        private bool destroyBullet(Collision collision) {
+            GameObject collisionObject = collision.gameObject;
 
-        if (collisionObject.tag == tag) {
-            Destroy(collisionObject);
-            return true;
-        } else {
-            return false;
+            if (collisionObject.tag == tag) {
+                Destroy(collisionObject);
+                return true;
+            } else {
+                return false;
+            }
         }
-    }
 
-    private void changeColour() {
-        var rend = GetComponent<Renderer>();
-        Material material = rend.material;
-        material.SetColor("_Color", Colours.Green);
-    }
+        private void changeColour() {
+            var rend = GetComponent<Renderer>();
+            Material material = rend.material;
+            material.SetColor("_Color", Colours.Green);
+        }
 
-    private void raiseSuccess() {
-        Event(this, EventArgs.Empty);
-    }
+        private void raiseSuccess() {
+            Event(this, EventArgs.Empty);
+        }
 
-    // Update is called once per frame
-    void OnCollisionEnter(Collision collision) {
-        bool isDestroyed = destroyBullet(collision);
+        // Update is called once per frame
+        void OnCollisionEnter(Collision collision) {
+            bool isDestroyed = destroyBullet(collision);
 
-        if (isDestroyed){
-            changeColour();
-            raiseSuccess();
+            if (isDestroyed){
+                changeColour();
+                raiseSuccess();
+            }
         }
     }
 }
