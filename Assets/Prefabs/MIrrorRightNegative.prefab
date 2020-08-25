@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6327684244785057051}
-  - component: {fileID: 4760533527411823408}
   m_Layer: 0
   m_Name: MIrrorRightNegative
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4760533527411823408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 251079353580543737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6e2e082cc3204478f3b0399ad26897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normal: {x: -0.70710677, y: -0.70710677, z: 0}
 --- !u!1 &9050607264589041396
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +44,7 @@ GameObject:
   - component: {fileID: 8259376181010663602}
   - component: {fileID: 5304892468204607691}
   - component: {fileID: 8815805394589557215}
+  - component: {fileID: 8418351565292218294}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -157,3 +144,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8418351565292218294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9050607264589041396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6e2e082cc3204478f3b0399ad26897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Normal: {x: -0.70710677, y: -0.7071068, z: 0}
