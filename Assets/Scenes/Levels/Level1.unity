@@ -10191,8 +10191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grid: {fileID: 756106056}
-  XRotation: 10
-  YRotation: 5
+  XRotation: 0
+  YRotation: 0
   ZRotation: 0
 --- !u!1001 &1361714816
 PrefabInstance:
