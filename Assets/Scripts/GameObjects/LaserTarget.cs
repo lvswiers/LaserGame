@@ -9,6 +9,10 @@ namespace GameObjects {
 
         private string tag = "Bullet";
         public event EventHandler Event;
+
+        public void Start(){
+            ResetTarget();
+        }
         
         private bool destroyBullet(Collision collision) {
             GameObject collisionObject = collision.gameObject;
@@ -21,10 +25,10 @@ namespace GameObjects {
             }
         }
 
-        private void changeColour() {
+        private void changeColour(Color colour) {
             var rend = GetComponent<Renderer>();
             Material material = rend.material;
-            material.SetColor("_Color", Colours.Green);
+            material.SetColor("_Color", colour);
         }
 
         private void raiseSuccess() {
@@ -36,9 +40,13 @@ namespace GameObjects {
             bool isDestroyed = destroyBullet(collision);
 
             if (isDestroyed){
-                changeColour();
+                changeColour(Colours.Green);
                 raiseSuccess();
             }
+        }
+
+        public void ResetTarget() {
+            changeColour(Colours.Red);
         }
     }
 }

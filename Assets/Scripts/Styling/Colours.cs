@@ -8,5 +8,6 @@ namespace Styling {
         public static Color DarkGrey = new Color(0.2f, 0.18f, 0.18f);
         public static Color Yellow = new Color(1f, 0.8f, 0);
         public static Color White = Color.white;
+        public static Color Red = Color.red;
     }
 }
