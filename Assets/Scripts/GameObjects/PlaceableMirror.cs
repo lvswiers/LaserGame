@@ -9,12 +9,15 @@ namespace GameObjects {
         private Vector3 screenPoint;
         private Vector3 offset;
 
+        private StartLevel startLevel;
+
         private Vector3 originalPosition;
 
         private bool floating = false;
 
         void Start(){
             originalPosition = transform.position;
+            startLevel = FindObjectOfType<StartLevel>();
         }
 
         void OnMouseDown()
@@ -24,11 +27,17 @@ namespace GameObjects {
             floating = true;
         }
         
+        private Vector3 updateDueToAngleOfPlane(Vector3 position) {
+            Quaternion rotation = Quaternion.Euler(startLevel.XRotation, startLevel.YRotation, startLevel.ZRotation);
+            return rotation * position;
+        }
+
         void OnMouseDrag()
         {
             Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint) + offset;
-            transform.position = currentPosition;
+            
+            transform.position = updateDueToAngleOfPlane( currentPosition);
         }
 
         private float getClosestGridPoint(float value){
