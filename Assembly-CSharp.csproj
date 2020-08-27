@@ -44,6 +44,8 @@
      <Compile Include="Assets\Scripts\Styling\Colours.cs" />
      <Compile Include="Assets\Scripts\StartLevel.cs" />
      <Compile Include="Assets\Scripts\GameObjects\LaserTarget.cs" />
+     <Compile Include="Assets\Scripts\GameObjects\PlaceableMirror.cs" />
+     <Compile Include="Assets\Scripts\GameObjects\Obstruction.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

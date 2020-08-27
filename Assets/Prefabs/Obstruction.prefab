@@ -1,6 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1144338195525138526
+--- !u!114 &2507632514974640616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567912749068364330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b01519865c85a40938c147e73a4353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Normal: {x: 0, y: 1, z: 0}
+--- !u!1001 &4897791457857313920
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,32 +23,42 @@ PrefabInstance:
     - target: {fileID: 909026534490482343, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: m_Name
-      value: MIrrorLeftPositive
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306587798482711346, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
-        type: 3}
-      propertyPath: Normal.y
-      value: -0.7071068
+      value: Obstruction
       objectReference: {fileID: 0}
     - target: {fileID: 1673513820608280139, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.38268343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1673513820608280139, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673513820608280139, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1673513820608280139, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673513820608280139, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673513820608280139, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673513820608280139, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6355127511781750085, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
@@ -95,17 +118,24 @@ PrefabInstance:
     - target: {fileID: 6669145956101113620, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: Normal.y
-      value: -0.7071068
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8088009659751260081, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+    - target: {fileID: 6669145956101113620, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
-      propertyPath: normal.y
-      value: -0.70710677
+      propertyPath: Normal.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8088009659751260081, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+    - target: {fileID: 9042862356641181932, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
-      propertyPath: Normal.y
-      value: -0.70710677
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97916335728ffca448c20512fac5c218, type: 2}
+    m_RemovedComponents:
+    - {fileID: 1306587798482711346, guid: 6f92e7f7dbe834bf2884b802ef1177f7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f92e7f7dbe834bf2884b802ef1177f7, type: 3}
+--- !u!1 &3567912749068364330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8249388199546828458, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 4897791457857313920}
+  m_PrefabAsset: {fileID: 0}
