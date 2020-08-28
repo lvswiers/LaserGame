@@ -23,8 +23,7 @@ namespace GameObjects {
         private void raiseSuccess() {
             Event(this, EventArgs.Empty);
         }
-
-        // Update is called once per frame
+    
         void OnCollisionEnter(Collision collision) {
             bool isDestroyed = BulletHandler.destroyBullet(collision);
 
