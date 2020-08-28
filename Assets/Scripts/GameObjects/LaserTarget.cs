@@ -1,28 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
 using Interfaces;
 using Styling;
+using Handlers;
 
 namespace GameObjects {
     public class LaserTarget : MonoBehaviour, EventGenerator {
 
-        private string tag = "Bullet";
+
         public event EventHandler Event;
 
         public void Start(){
             ResetTarget();
-        }
-        
-        private bool destroyBullet(Collision collision) {
-            GameObject collisionObject = collision.gameObject;
-
-            if (collisionObject.tag == tag) {
-                Destroy(collisionObject);
-                return true;
-            } else {
-                return false;
-            }
         }
 
         private void changeColour(Color colour) {
@@ -37,7 +26,7 @@ namespace GameObjects {
 
         // Update is called once per frame
         void OnCollisionEnter(Collision collision) {
-            bool isDestroyed = destroyBullet(collision);
+            bool isDestroyed = BulletHandler.destroyBullet(collision);
 
             if (isDestroyed){
                 changeColour(Colours.Green);
