@@ -6,38 +6,30 @@ using Interfaces;
 namespace GameObjects {
     public class PlaceableMirror : Mirror
     {
-        private Vector3 screenPoint;
-        private Vector3 offset;
-
-        private StartLevel startLevel;
 
         private Vector3 originalPosition;
+        private Vector3 screenPoint;
 
         private bool floating = false;
 
         void Start(){
             originalPosition = transform.position;
-            startLevel = FindObjectOfType<StartLevel>();
+
         }
 
         void OnMouseDown()
         {
-            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             floating = true;
-        }
-        
-        private Vector3 updateDueToAngleOfPlane(Vector3 position) {
-            Quaternion rotation = Quaternion.Euler(startLevel.XRotation, startLevel.YRotation, startLevel.ZRotation);
-            return rotation * position;
+            screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         }
 
         void OnMouseDrag()
         {
+            // Estimate screenpoint by using original z, correct for z later (camera angled)
             Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-            Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint) + offset;
-            
-            transform.position = updateDueToAngleOfPlane( currentPosition);
+            Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint);
+            currentPosition.z = originalPosition.z; // correct position
+            transform.position = currentPosition;
         }
 
         private float getClosestGridPoint(float value){
