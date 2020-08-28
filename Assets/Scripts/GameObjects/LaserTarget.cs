@@ -7,7 +7,6 @@ using Handlers;
 namespace GameObjects {
     public class LaserTarget : MonoBehaviour, EventGenerator {
 
-
         public event EventHandler Event;
 
         public void Start(){
