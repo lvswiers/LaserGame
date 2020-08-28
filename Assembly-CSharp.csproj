@@ -48,6 +48,8 @@
      <Compile Include="Assets\Scripts\GameObjects\LaserTarget.cs" />
      <Compile Include="Assets\Scripts\Handlers\BulletHandler.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Wall.cs" />
+     <Compile Include="Assets\Scripts\Domain\MenuButton.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -14,7 +14,6 @@ namespace GameObjects {
 
         void Start(){
             originalPosition = transform.position;
-
         }
 
         void OnMouseDown()
