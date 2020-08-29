@@ -1243,6 +1243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4555eb95145aea44a19fe7902779cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildMode: 1
 --- !u!114 &1068817356 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2709478574577658017, guid: d92661013a56b41b99bf7f1c758c05c5,
@@ -1457,6 +1458,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1358195509}
         m_TargetAssemblyTypeName: StartLevel, Assembly-CSharp
         m_MethodName: ResetInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 982082479}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ToggleBuildMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2011,6 +2024,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1599100448}
         m_TargetAssemblyTypeName: GameObjects.DynamicButton, Assembly-CSharp
         m_MethodName: NewAttempt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 982082479}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ToggleBuildMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

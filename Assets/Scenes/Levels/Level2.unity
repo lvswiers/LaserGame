@@ -8524,6 +8524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4555eb95145aea44a19fe7902779cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildMode: 1
 --- !u!1001 &986073989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10646,6 +10647,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 982082479}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ToggleBuildMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1227695829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11970,8 +11983,6 @@ MonoBehaviour:
   mirrors:
   - {fileID: 2103011890}
   - {fileID: 1539448970}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &1359813966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2891813507522851238, guid: c3326e313e651b648b356546bea537e2,
@@ -14053,6 +14064,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1599100448}
         m_TargetAssemblyTypeName: GameObjects.DynamicButton, Assembly-CSharp
         m_MethodName: NewAttempt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 982082479}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ToggleBuildMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
