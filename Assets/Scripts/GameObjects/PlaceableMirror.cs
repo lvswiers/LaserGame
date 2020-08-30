@@ -12,25 +12,22 @@ namespace GameObjects {
 
         private bool floating = false;
 
-        private GameManager gameManager;
+        private bool buildMode = true;
 
-        void Start(){
+        void Start() {
             originalPosition = transform.position;
-            gameManager = FindObjectOfType<GameManager>();
         }
 
-        void OnMouseDown()
-        {
-            if (gameManager.BuildMode){
+        void OnMouseDown() {
+            if (buildMode){
                 floating = true;
                 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
             }
             
         }
 
-        void OnMouseDrag()
-        {
-            if (gameManager.BuildMode){
+        void OnMouseDrag() {
+            if (buildMode){
             // Estimate screenpoint by using original z, correct for z later (camera angled)
             Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint);
@@ -39,7 +36,7 @@ namespace GameObjects {
             }
         }
 
-        private float getClosestGridPoint(float value){
+        private float getClosestGridPoint(float value) {
            float newValue = Mathf.Round(value/0.5f)*0.5f;
            if (Mathf.Round(newValue) == newValue) {
                newValue += (newValue - value)/(newValue - value)*0.5f;
@@ -48,7 +45,7 @@ namespace GameObjects {
 
         }
         public void OnMouseUp() {
-            if (gameManager.BuildMode){
+            if (buildMode){
                 // snap object to grid
                 float newx = getClosestGridPoint(transform.position.x);
                 float newy = getClosestGridPoint(transform.position.y);
@@ -59,6 +56,10 @@ namespace GameObjects {
 
         public void ResetPosition() {
             transform.position = originalPosition;
+        }
+
+        public void ToggleBuildMode() {
+            buildMode = !buildMode;
         }
 
     }

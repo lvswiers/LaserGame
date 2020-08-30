@@ -18,7 +18,6 @@ namespace GameObjects {
         override protected void Update() {
             base.Update();
             if (isAnimating) {
-                Debug.Log("animating");
                 if (currentNumberOfCycles == animationLengthUpdateCycles) {
                     Destroy(BulletObject);
                     isAnimating = false;
