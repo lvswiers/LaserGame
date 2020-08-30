@@ -32,5 +32,9 @@ namespace GameObjects {
             isAnimating = true;
             currentNumberOfCycles = 0;
         }
+
+        public void Destroy() {
+            Destroy(BulletObject);
+        }
     }
 }

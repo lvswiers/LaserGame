@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Interfaces;
+using Styling;
 
 // Based on https://answers.unity.com/questions/12322/drag-gameobject-with-mouse.html
 namespace GameObjects {
@@ -9,6 +10,10 @@ namespace GameObjects {
 
         private Vector3 originalPosition;
         private Vector3 screenPoint;
+
+        public Material DefaultMaterial;
+        public Material DisabledMaterial;
+        
 
         private bool floating = false;
 
@@ -58,8 +63,21 @@ namespace GameObjects {
             transform.position = originalPosition;
         }
 
+        private void AdaptTransparency() {
+
+        }
+        private void UpdateColour() {
+            Renderer renderer = GetComponent<Renderer>();
+            if (!buildMode){
+                renderer.material = DisabledMaterial;
+            } else {
+                renderer.material = DefaultMaterial;
+            }
+        }
+
         public void ToggleBuildMode() {
             buildMode = !buildMode;
+            UpdateColour();
         }
 
     }

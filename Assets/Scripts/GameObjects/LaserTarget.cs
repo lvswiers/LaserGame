@@ -24,7 +24,7 @@ namespace GameObjects {
         }
     
         void OnCollisionEnter(Collision collision) {
-            bool isDestroyed = BulletHandler.destroyBullet(collision);
+            bool isDestroyed = BulletHandler.DestroyBulletInstantly(collision);
 
             if (isDestroyed){
                 changeColour(Colours.Green);

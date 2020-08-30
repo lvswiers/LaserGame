@@ -9,5 +9,6 @@ namespace Styling {
         public static Color Yellow = new Color(1f, 0.8f, 0);
         public static Color White = Color.white;
         public static Color Red = Color.red;
+        public static Color DarkBrown = new Color(0.5f, 0, 0, 0.3f);
     }
 }
