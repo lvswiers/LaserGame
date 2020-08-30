@@ -8,12 +8,6 @@ public class LevelManager : MonoBehaviour {
 
     public DynamicObjectsContainer container; 
 
-    void Start() {
-        // Find first instance of dynamic button and link OnSuccess to laserTarget's event generator
-        DynamicButton button = GetComponentInChildren<DynamicButton>();
-        container.LaserTarget.Event += button.OnSuccess;
-    }
-
     public void ResetInventory() {
         foreach (var mirror in container.Mirrors)
         {

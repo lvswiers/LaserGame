@@ -14,7 +14,6 @@ namespace Handlers {
                 bullet.InitiateDestruction();
                 return true;
             } catch (Exception e) {
-                Debug.LogWarning(e);
                 return false;
             }
         }
