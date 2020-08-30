@@ -48,10 +48,10 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Styling\Colours.cs" />
      <Compile Include="Assets\Scripts\GameObjects\LaserTarget.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IDestructable.cs" />
      <Compile Include="Assets\Scripts\Domain\MenuButton.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\DynamicObjectsContainer.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Destructable.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IEventGenerator.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
