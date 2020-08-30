@@ -18,12 +18,13 @@ namespace GameObjects {
 
         private void instantiateBullet() {
             Bullet = Instantiate(BulletPrefab);
-            Bullet.GetComponent<Projectile>().startVelocity = new Vector3(-5f,0f,0f);
+            Bullet.GetComponent<Bullet>().startVelocity = new Vector3(-5f,0f,0f);
             Bullet.transform.position = GetHorizontalPositionOfParent();
         }
 
         public void StartMovingBullet() {
-            Bullet.GetComponent<Projectile>().StartMoving();
+            Bullet bull = Bullet.GetComponent<Bullet>();
+            Bullet.GetComponent<Bullet>().StartMoving();
         }
 
         public void ResetBullet() {
