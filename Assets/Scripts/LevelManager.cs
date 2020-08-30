@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour {
 
     public DynamicObjectsContainer container; 
 
+    public bool BuildModeToggleable = true;
+
     public void ResetInventory() {
         foreach (var mirror in container.Mirrors)
         {
@@ -19,8 +21,10 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void ToggleBuildMode() {
-        foreach (var mirror in container.Mirrors) {
+        if (BuildModeToggleable) {
+            foreach (var mirror in container.Mirrors) {
             mirror.ToggleBuildMode();
+            }
         }
     }
 
