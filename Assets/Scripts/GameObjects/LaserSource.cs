@@ -18,7 +18,7 @@ namespace GameObjects {
 
         private void instantiateBullet() {
             Bullet = Instantiate(BulletPrefab);
-            Bullet.GetComponent<Bullet>().startVelocity = new Vector3(-5f,0f,0f);
+            Bullet.GetComponent<Bullet>().startVelocity = new Vector3(-1f,0f,0f) * Speed;
             Bullet.transform.position = GetHorizontalPositionOfParent();
         }
 
