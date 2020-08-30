@@ -5,7 +5,7 @@ using Styling;
 using Handlers;
 
 namespace GameObjects {
-    public class LaserTarget : MonoBehaviour, EventGenerator {
+    public class LaserTarget : MonoBehaviour, IEventGenerator {
 
         public event EventHandler Event;
 

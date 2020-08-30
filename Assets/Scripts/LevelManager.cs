@@ -48,4 +48,9 @@ public class LevelManager : MonoBehaviour {
         ResetLaserSource();
     }
 
+    public void ClickResetBullet() {
+        ResetLaserSource();
+        ToggleBuildMode();
+    }
+
 }
