@@ -2,6 +2,11 @@
 using UnityEngine;
 using GameObjects;
 
+/// <summary>
+/// This class represents most objects in the scene that have dynamic properties.
+/// Especially the ones that are changed by button triggers or custom events.
+/// Example of dynamic object not contained here: Bullet.
+/// </summary>
 public class DynamicObjectsContainer: MonoBehaviour {
 
     private PlaceableMirror[] mirrors;

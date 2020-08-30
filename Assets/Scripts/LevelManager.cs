@@ -2,6 +2,9 @@
 using System.Collections;
 using GameObjects;
 
+/// <summary>
+/// Handles button click events in the level
+/// </summary>
 public class LevelManager : MonoBehaviour {
 
     public bool BuildMode = true;
