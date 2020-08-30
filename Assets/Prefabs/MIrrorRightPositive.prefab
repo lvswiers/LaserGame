@@ -157,3 +157,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Normal: {x: -0.7071068, y: 0.7071068, z: 0}
+  DefaultMaterial: {fileID: 2100000, guid: 7587489c486b5497ca4174ee7daa18df, type: 2}
+  DisabledMaterial: {fileID: 2100000, guid: 1f0708b28735eb244b81c444be89034d, type: 2}

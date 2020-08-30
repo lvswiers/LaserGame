@@ -5,7 +5,7 @@ using Styling;
 using Handlers;
 
 namespace GameObjects {
-    public class LaserTarget : MonoBehaviour, EventGenerator {
+    public class LaserTarget : MonoBehaviour, IEventGenerator {
 
         public event EventHandler Event;
 
@@ -24,7 +24,7 @@ namespace GameObjects {
         }
     
         void OnCollisionEnter(Collision collision) {
-            bool isDestroyed = BulletHandler.destroyBullet(collision);
+            bool isDestroyed = BulletHandler.DestroyBulletInstantly(collision);
 
             if (isDestroyed){
                 changeColour(Colours.Green);

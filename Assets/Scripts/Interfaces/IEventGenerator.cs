@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Interfaces {
-    public interface EventGenerator {
+    public interface IEventGenerator {
         event EventHandler Event;
     }
 }
