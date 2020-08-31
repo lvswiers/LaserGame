@@ -14,16 +14,19 @@ public class LevelManager : MonoBehaviour {
     public bool BuildModeToggleable = true;
 
     public void ResetInventory() {
-        foreach (var @object in container.PlaceableObjects)
+        foreach (var placeable in container.PlaceableObjects)
         {
-            @object.ResetPosition();
+            placeable.ResetPosition();
         }
     }
 
     private void ToggleBuildMode() {
         if (BuildModeToggleable) {
-            foreach (var @object in container.PlaceableObjects) {
-            @object.ToggleBuildMode();
+            foreach (var placeable in container.PlaceableObjects) {
+                placeable.ToggleBuildMode();
+            }
+            foreach (var mirror in container.InventoryMirrors) {
+                mirror.ToggleBuildMode();
             }
         }
     }

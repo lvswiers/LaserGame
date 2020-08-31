@@ -11,10 +11,9 @@ namespace GameObjects {
         private Vector3 screenPoint;
 
         private bool floating = false;
-
         protected bool buildMode = true;
 
-        void Start() {
+        protected virtual void Start() {
             originalPosition = transform.position;
         }
 
@@ -58,7 +57,7 @@ namespace GameObjects {
             transform.position = originalPosition;
         }
 
-        public virtual void ToggleBuildMode() {
+        public void ToggleBuildMode() {
             buildMode = !buildMode;
         }
 

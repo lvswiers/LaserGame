@@ -30,17 +30,10 @@ namespace GameObjects {
         }
 
         private void OnCollisionEnter(Collision collision) {
-            Debug.Log("BOUNCe");
-            // Todo: refactor game object inheritance to make sure we can assume that there is a normal again without using different types
-
-            PlaceableMirror mirror = collision.gameObject.GetComponent<PlaceableMirror>();
-            Obstruction obstruction = collision.gameObject.GetComponent<Obstruction>();
+            Mirror mirror = collision.gameObject.GetComponent<Mirror>();
 
             if (mirror != null) {
                 reflectOnSurface(mirror.Normal);
-                Debug.Log("MIRROR");
-            } else if(obstruction != null) {
-                reflectOnSurface(obstruction.Normal);
             }
         }
 
