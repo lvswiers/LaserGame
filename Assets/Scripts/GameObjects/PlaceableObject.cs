@@ -5,21 +5,15 @@ using Styling;
 
 // Based on https://answers.unity.com/questions/12322/drag-gameobject-with-mouse.html
 namespace GameObjects {
-    public class PlaceableMirror : Mirror
+    public class PlaceableObject: MonoBehaviour
     {
-
         private Vector3 originalPosition;
         private Vector3 screenPoint;
 
-        public Material DefaultMaterial;
-        public Material DisabledMaterial;
-        
-
         private bool floating = false;
+        protected bool buildMode = true;
 
-        private bool buildMode = true;
-
-        void Start() {
+        protected virtual void Start() {
             originalPosition = transform.position;
         }
 
@@ -63,21 +57,8 @@ namespace GameObjects {
             transform.position = originalPosition;
         }
 
-        private void AdaptTransparency() {
-
-        }
-        private void UpdateColour() {
-            Renderer renderer = GetComponent<Renderer>();
-            if (!buildMode){
-                renderer.material = DisabledMaterial;
-            } else {
-                renderer.material = DefaultMaterial;
-            }
-        }
-
         public void ToggleBuildMode() {
             buildMode = !buildMode;
-            UpdateColour();
         }
 
     }

@@ -21,16 +21,20 @@ namespace GameObjects {
             Destroy(this); // just a simple distruct
         }
 
-        private void OnCollisionEnter(Collision collision) {
-            
-            Mirror mirror = collision.gameObject.GetComponent<Mirror>();
-            if (mirror) {
-                Vector3 normal = mirror.Normal;
 
-            // Calculate the new velocity by using the normal vector of the mirror and the original velocity, using projection/dot product
+        private void reflectOnSurface(Vector3 normal) {
+            // Calculate the new velocity by using the normal vector of the surface and the original velocity, using projection/dot product
             // Example of a derivation: https://math.stackexchange.com/questions/13261/how-to-get-a-reflection-vector
             velocity = velocity - 2 * (Vector3.Dot(velocity, normal)* normal);
-            }  
+            
+        }
+
+        private void OnCollisionEnter(Collision collision) {
+            Mirror mirror = collision.gameObject.GetComponent<Mirror>();
+
+            if (mirror != null) {
+                reflectOnSurface(mirror.Normal);
+            }
         }
 
         public void StartMoving() {

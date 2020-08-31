@@ -12,7 +12,7 @@ namespace GameObjects {
 
         private void applyAnimation(){
             BulletSphere.transform.localScale *= 1.02f; 
-            velocity = velocity * 0.8f;
+            velocity *= 0.8f;
         }
 
         override protected void Update() {
