@@ -9,14 +9,14 @@ using GameObjects;
 /// </summary>
 public class DynamicObjectsContainer: MonoBehaviour {
 
-    private PlaceableMirror[] mirrors;
+    private PlaceableObject[] placeableObjects;
     private LaserSource laserSource;
     private LaserTarget laserTarget;
 
     private DynamicButton dynamicButton;
 
-    public PlaceableMirror[] Mirrors {
-        get { return mirrors; }
+    public PlaceableObject[] PlaceableObjects {
+        get { return placeableObjects; }
     }
 
     public LaserSource LaserSource {
@@ -32,7 +32,7 @@ public class DynamicObjectsContainer: MonoBehaviour {
     }
 
     void Start() {
-        mirrors = GetComponentsInChildren<PlaceableMirror>();
+        placeableObjects = GetComponentsInChildren<PlaceableObject>();
         laserSource = GetComponentInChildren<LaserSource>();
         laserTarget = GetComponentInChildren<LaserTarget>();
         dynamicButton = GetComponentInChildren<DynamicButton>();

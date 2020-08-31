@@ -1,7 +1,8 @@
 using UnityEngine;
 
 namespace GameObjects {
-    public class Obstruction : Mirror
+    public class Obstruction : MonoBehaviour
     {
+        public Vector3 Normal; 
     }
 }
