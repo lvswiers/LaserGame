@@ -9,8 +9,6 @@ namespace GameObjects {
     {
         private Vector3 originalPosition;
         private Vector3 screenPoint;
-
-        private bool floating = false;
         protected bool buildMode = true;
 
         protected virtual void Start() {
@@ -19,7 +17,6 @@ namespace GameObjects {
 
         void OnMouseDown() {
             if (buildMode){
-                floating = true;
                 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
             }
             
@@ -49,7 +46,6 @@ namespace GameObjects {
                 float newx = getClosestGridPoint(transform.position.x);
                 float newy = getClosestGridPoint(transform.position.y);
                 transform.position = new Vector3 (newx, newy, transform.position.z);
-                floating = false;
             }
         }
 
