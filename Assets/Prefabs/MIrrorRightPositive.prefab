@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 1592966362085756184, guid: 8815f7bbe22454476a4f5db43221eaf2,
         type: 3}
       propertyPath: m_Name
-      value: MirrorRightPositive
+      value: MIrrorRightPositive
       objectReference: {fileID: 0}
     - target: {fileID: 4807357768084299514, guid: 8815f7bbe22454476a4f5db43221eaf2,
         type: 3}
@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 4807357768084299514, guid: 8815f7bbe22454476a4f5db43221eaf2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4807357768084299514, guid: 8815f7bbe22454476a4f5db43221eaf2,
         type: 3}

@@ -11,15 +11,18 @@ namespace GameObjects {
         private Vector3 screenPoint;
         protected bool buildMode = true;
 
+        private GameObject Container; // represents container and locatable gameobject
+
         protected virtual void Start() {
-            originalPosition = transform.position;
+            // Assume script is linked to child with collision properties
+            Container = transform.parent.gameObject;
+            originalPosition = Container.transform.position;
         }
 
         void OnMouseDown() {
             if (buildMode){
-                screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+                screenPoint = Camera.main.WorldToScreenPoint(Container.transform.position);
             }
-            
         }
 
         void OnMouseDrag() {
@@ -28,7 +31,7 @@ namespace GameObjects {
             Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint);
             currentPosition.z = originalPosition.z; // correct position
-            transform.position = currentPosition;
+            Container.transform.position = currentPosition;
             }
         }
 
@@ -43,14 +46,14 @@ namespace GameObjects {
         public void OnMouseUp() {
             if (buildMode){
                 // snap object to grid
-                float newx = getClosestGridPoint(transform.position.x);
-                float newy = getClosestGridPoint(transform.position.y);
-                transform.position = new Vector3 (newx, newy, transform.position.z);
+                float newx = getClosestGridPoint(Container.transform.position.x);
+                float newy = getClosestGridPoint(Container.transform.position.y);
+                Container.transform.position = new Vector3 (newx, newy, Container.transform.position.z);
             }
         }
 
         public void ResetPosition() {
-            transform.position = originalPosition;
+            Container.transform.position = originalPosition;
         }
 
         public void ToggleBuildMode() {

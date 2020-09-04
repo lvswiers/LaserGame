@@ -4,7 +4,6 @@ namespace GameObjects {
     public class Bullet: Projectile {
 
         public GameObject BulletSphere;
-        public GameObject BulletObject;
         
         private int animationLengthUpdateCycles = 50;
         private bool isAnimating = false;
@@ -19,7 +18,7 @@ namespace GameObjects {
             base.Update();
             if (isAnimating) {
                 if (currentNumberOfCycles == animationLengthUpdateCycles) {
-                    Destroy(BulletObject);
+                    Destroy(Container);
                     isAnimating = false;
                 } else{
                     applyAnimation();
@@ -34,7 +33,8 @@ namespace GameObjects {
         }
 
         public void Destroy() {
-            Destroy(BulletObject);
+            Destroy(Container);
         }
+
     }
 }

@@ -11,14 +11,16 @@ namespace GameObjects {
 
         protected Vector3 velocity;
 
+        public GameObject Container; // Represents container and locator of projectile
+
         // Update is called once per frame
         protected virtual void Update() {
             // Update position of Projectile using its velocity
-            transform.position += velocity * Time.deltaTime;
+            Container.transform.position += velocity * Time.deltaTime;
         }
 
         public virtual void InitiateDestruction() {
-            Destroy(this); // just a simple distruct
+            Destroy(Container); // just a simple distruct
         }
 
 
@@ -31,6 +33,7 @@ namespace GameObjects {
 
         private void OnCollisionEnter(Collision collision) {
             Mirror mirror = collision.gameObject.GetComponent<Mirror>();
+            Debug.Log(mirror);
 
             if (mirror != null) {
                 reflectOnSurface(mirror.Normal);
@@ -39,6 +42,10 @@ namespace GameObjects {
 
         public void StartMoving() {
             velocity = startVelocity;
+        }
+
+        public void UpdatePosition(Vector3 newPosition) {
+            Container.transform.position = newPosition;
         }
     }
 }

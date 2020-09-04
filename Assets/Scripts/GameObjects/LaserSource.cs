@@ -6,31 +6,33 @@ namespace GameObjects {
 
         public GameObject BulletPrefab;
         public float Speed;
-        private GameObject Bullet;
+        private GameObject BulletContainer;
+        private Bullet Bullet;
 
         void Start() {
             instantiateBullet();
         }
 
-        private Vector2 GetHorizontalPositionOfParent() {
-            return transform.position; // Note there is an implicit conversion from Vector3 to Vector2 here
-        }
-
         private void instantiateBullet() {
-            Bullet = Instantiate(BulletPrefab);
-            Bullet.GetComponent<Bullet>().startVelocity = new Vector3(-1f,0f,0f) * Speed;
-            Bullet.transform.position = GetHorizontalPositionOfParent();
+            BulletContainer = Instantiate(BulletPrefab);
+            BulletContainer.transform.parent = this.transform;
+            Bullet = BulletContainer.GetComponentInChildren<Bullet>();
+            Bullet.startVelocity = new Vector3(-1f,0f,0f) * Speed;
+
+            // Set position of bullet to position of this object, but ignore the height of the object so the projectile follows the ground
+            Vector3 startingPosition = transform.position;
+            startingPosition.z = 0;
+            Bullet.UpdatePosition(startingPosition);
         }
 
         public void StartMovingBullet() {
-            Bullet bull = Bullet.GetComponent<Bullet>();
-            Bullet.GetComponent<Bullet>().StartMoving();
+            Bullet.StartMoving();
         }
 
         public void ResetBullet() {
-            if (Bullet != null) {
-                Destroy(Bullet);
-            }
+            if (BulletContainer != null) {
+                Destroy(BulletContainer);
+            } 
             instantiateBullet();
         }
     }
