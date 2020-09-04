@@ -10,7 +10,7 @@ namespace GameObjects {
         private int currentNumberOfCycles = 0;
 
         private void applyAnimation(){
-            BulletSphere.transform.localScale *= 1.02f; 
+            BulletSphere.transform.localScale *= 1.01f; 
             velocity *= 0.8f;
         }
 
