@@ -24,7 +24,6 @@ namespace GameObjects {
         }
     
         void OnCollisionEnter(Collision collision) {
-            Debug.Log("BOOM");
             bool isDestroyed = BulletHandler.DestroyBulletInstantly(collision);
 
             if (isDestroyed){

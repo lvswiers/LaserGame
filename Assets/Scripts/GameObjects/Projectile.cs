@@ -33,7 +33,6 @@ namespace GameObjects {
 
         private void OnCollisionEnter(Collision collision) {
             Mirror mirror = collision.gameObject.GetComponent<Mirror>();
-            Debug.Log(mirror);
 
             if (mirror != null) {
                 reflectOnSurface(mirror.Normal);
