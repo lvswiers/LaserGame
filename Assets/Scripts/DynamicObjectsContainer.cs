@@ -1,6 +1,6 @@
-
 using UnityEngine;
 using GameObjects;
+using UnityEngine.UI;
 
 /// <summary>
 /// This class represents most objects in the scene that have dynamic properties.
@@ -14,6 +14,7 @@ public class DynamicObjectsContainer: MonoBehaviour {
     private LaserSource laserSource;
     private LaserTarget laserTarget;
     private DynamicButton dynamicButton;
+    private Text counter;
 
     public PlaceableObject[] PlaceableObjects {
         get { return placeableObjects; }
@@ -35,12 +36,18 @@ public class DynamicObjectsContainer: MonoBehaviour {
         get { return inventoryMirrors; }
     }
 
+    public Text Counter {
+        get { return counter; }
+    }
+
     void Start() {
         placeableObjects = GetComponentsInChildren<PlaceableObject>();
         laserSource = GetComponentInChildren<LaserSource>();
         laserTarget = GetComponentInChildren<LaserTarget>();
         dynamicButton = GetComponentInChildren<DynamicButton>();
         inventoryMirrors = GetComponentsInChildren<InventoryMirror>();
+        GameObject test = GameObject.FindGameObjectWithTag("Counter");
+        counter = GameObject.FindGameObjectWithTag("Counter").GetComponent<Text>();
 
         // Link events of lasertarget to button:
         laserTarget.Event += dynamicButton.OnSuccess;

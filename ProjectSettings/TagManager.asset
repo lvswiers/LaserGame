@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Target
   - Bullet
+  - Counter
   layers:
   - Default
   - TransparentFX

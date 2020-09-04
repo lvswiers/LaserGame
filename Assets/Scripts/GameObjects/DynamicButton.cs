@@ -8,6 +8,7 @@ namespace GameObjects {
 
         private Color defaultColour = Colours.Yellow;
         private string defaultText = "Shoot!";
+        private string successText = "Success!";
         private Color successColour = Colours.LightGreen;
         private Button button;
 
@@ -34,23 +35,11 @@ namespace GameObjects {
         }
 
         public void OnSuccess(object sender, System.EventArgs e) {
-            UpdateButton(successColour, $"Success after {attempts} attempt(s)!");
-        }
-
-        private string updateTextIfNotSucces(){
-            if (attempts == 0) {
-                return defaultText;
-            } else {
-                return $"{defaultText} {attempts} attempt(s) so far";
-            }
-        }
-
-        public void UpdateNumberOfAttempts() {
-            attempts += 1;
+            UpdateButton(successColour, successText);
         }
 
         public void ResetButton() {
-            UpdateButton(defaultColour, updateTextIfNotSucces());
+            UpdateButton(defaultColour, defaultText);
         }
         
     }
