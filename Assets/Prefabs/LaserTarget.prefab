@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864951fb2de04446e9f58f9f8882fa99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultMaterial: {fileID: 2100000, guid: 7587489c486b5497ca4174ee7daa18df, type: 2}
+  DefaultMaterial: {fileID: 2100000, guid: 5d746d49dc55ae043bf4a3b1ba316522, type: 2}
   SuccessMaterial: {fileID: 2100000, guid: 07655d88a752344f4b8384fc16940342, type: 2}
 --- !u!1 &7372038403294351989
 GameObject:
@@ -107,6 +107,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3820162598593191657, guid: 1ba033b54917047be8765cda28c43a4f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d746d49dc55ae043bf4a3b1ba316522, type: 2}
     - target: {fileID: 4288688365275209359, guid: 1ba033b54917047be8765cda28c43a4f,
         type: 3}
       propertyPath: m_IsKinematic

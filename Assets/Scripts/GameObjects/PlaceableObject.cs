@@ -32,8 +32,9 @@ namespace GameObjects {
             // Estimate screenpoint by using original z, correct for z later (camera angled)
             Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint);
-            currentPosition.z = originalPosition.z; // correct position
-            container.transform.position = currentPosition + offsetContainerAndThisObject;
+            currentPosition += offsetContainerAndThisObject; // correct offset between parent and this object;
+            currentPosition.z = originalPosition.z; // correct height;
+            container.transform.position = currentPosition;
             }
         }
 
