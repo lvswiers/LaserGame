@@ -28,7 +28,7 @@ public class DynamicObjectsContainer: MonoBehaviour {
     }
 
     public DynamicButton DynamicButton {
-        get { return DynamicButton; }
+        get { return dynamicButton; }
     }
 
     public InventoryMirror[] InventoryMirrors {

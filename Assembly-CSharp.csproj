@@ -45,6 +45,7 @@
      <Compile Include="Assets\Scripts\GameObjects\Bullet.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Mirror.cs" />
      <Compile Include="Assets\Scripts\GameObjects\Obstruction.cs" />
+     <Compile Include="Assets\Scripts\GameObjects\PlaceableObject.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Styling\Colours.cs" />
      <Compile Include="Assets\Scripts\DynamicObjectsContainer.cs" />
@@ -52,7 +53,6 @@
      <Compile Include="Assets\Scripts\Interfaces\IDestructable.cs" />
      <Compile Include="Assets\Scripts\Domain\MenuButton.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IEventGenerator.cs" />
-     <Compile Include="Assets\Scripts\GameObjects\PlaceableObject.cs" />
      <Compile Include="Assets\Scripts\GameObjects\InventoryMirror.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

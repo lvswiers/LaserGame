@@ -6,32 +6,43 @@ namespace GameObjects {
 
         public GameObject BulletPrefab;
         public float Speed;
-        private GameObject Bullet;
+        private GameObject bulletContainer;
+        private Bullet bullet;
+        private Wall wall; 
 
         void Start() {
+            wall = GetComponentInChildren<Wall>();
             instantiateBullet();
-        }
-
-        private Vector2 GetHorizontalPositionOfParent() {
-            return transform.position; // Note there is an implicit conversion from Vector3 to Vector2 here
         }
 
         private void instantiateBullet() {
-            Bullet = Instantiate(BulletPrefab);
-            Bullet.GetComponent<Bullet>().startVelocity = new Vector3(-1f,0f,0f) * Speed;
-            Bullet.transform.position = GetHorizontalPositionOfParent();
+            bulletContainer = Instantiate(BulletPrefab);
+            bulletContainer.transform.parent = this.transform;
+            bullet = bulletContainer.GetComponentInChildren<Bullet>();
+            bullet.startVelocity = new Vector3(-1f,0f,0f) * Speed;
+
+            // Set position of bullet to position of this object, but ignore the height of the object so the projectile follows the ground
+            Vector3 startingPosition = transform.position;
+            startingPosition.z = 0;
+            bullet.UpdatePosition(startingPosition);
+
+            // Temporarily turn off wall property
+            wall.DeActivate();
         }
 
         public void StartMovingBullet() {
-            Bullet bull = Bullet.GetComponent<Bullet>();
-            Bullet.GetComponent<Bullet>().StartMoving();
+            bullet.StartMoving();
         }
 
         public void ResetBullet() {
-            if (Bullet != null) {
-                Destroy(Bullet);
-            }
+            if (bulletContainer != null) {
+                Destroy(bulletContainer);
+            } 
             instantiateBullet();
+        }
+
+        void OnCollisionExit(Collision collision) {
+            wall.Activate(); // activate wall property after the bullet has left
         }
     }
 }

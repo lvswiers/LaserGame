@@ -9,20 +9,22 @@ namespace GameObjects {
     {
         private Vector3 originalPosition;
         private Vector3 screenPoint;
-
-        private bool floating = false;
         protected bool buildMode = true;
 
+        private GameObject container; // represents container and locatable gameobject
+        private Vector3 offsetContainerAndThisObject;
+
         protected virtual void Start() {
-            originalPosition = transform.position;
+            // Assume script is linked to child with collision properties
+            container = transform.parent.gameObject;
+            offsetContainerAndThisObject = container.transform.position - transform.position;
+            originalPosition = container.transform.position;
         }
 
         void OnMouseDown() {
             if (buildMode){
-                floating = true;
-                screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+                screenPoint = Camera.main.WorldToScreenPoint(container.transform.position);
             }
-            
         }
 
         void OnMouseDrag() {
@@ -30,8 +32,9 @@ namespace GameObjects {
             // Estimate screenpoint by using original z, correct for z later (camera angled)
             Vector3 currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenPoint);
-            currentPosition.z = originalPosition.z; // correct position
-            transform.position = currentPosition;
+            currentPosition += offsetContainerAndThisObject; // correct offset between parent and this object;
+            currentPosition.z = originalPosition.z; // correct height;
+            container.transform.position = currentPosition;
             }
         }
 
@@ -46,15 +49,14 @@ namespace GameObjects {
         public void OnMouseUp() {
             if (buildMode){
                 // snap object to grid
-                float newx = getClosestGridPoint(transform.position.x);
-                float newy = getClosestGridPoint(transform.position.y);
-                transform.position = new Vector3 (newx, newy, transform.position.z);
-                floating = false;
+                float newx = getClosestGridPoint(container.transform.position.x);
+                float newy = getClosestGridPoint(container.transform.position.y);
+                container.transform.position = new Vector3 (newx, newy, container.transform.position.z);
             }
         }
 
         public void ResetPosition() {
-            transform.position = originalPosition;
+            container.transform.position = originalPosition;
         }
 
         public void ToggleBuildMode() {

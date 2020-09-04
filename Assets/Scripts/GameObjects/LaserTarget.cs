@@ -8,15 +8,15 @@ namespace GameObjects {
     public class LaserTarget : MonoBehaviour, IEventGenerator {
 
         public event EventHandler Event;
+        public Material DefaultMaterial;
+        public Material SuccessMaterial;
 
         public void Start(){
             ResetTarget();
         }
 
-        private void changeColour(Color colour) {
-            var rend = GetComponent<Renderer>();
-            Material material = rend.material;
-            material.SetColor("_Color", colour);
+        private void changeMaterial(Material material) {
+            GetComponent<Renderer>().material = material;
         }
 
         private void raiseSuccess() {
@@ -27,13 +27,13 @@ namespace GameObjects {
             bool isDestroyed = BulletHandler.DestroyBulletInstantly(collision);
 
             if (isDestroyed){
-                changeColour(Colours.Green);
+                changeMaterial(SuccessMaterial);
                 raiseSuccess();
             }
         }
 
         public void ResetTarget() {
-            changeColour(Colours.Red);
+            changeMaterial(DefaultMaterial);
         }
     }
 }
