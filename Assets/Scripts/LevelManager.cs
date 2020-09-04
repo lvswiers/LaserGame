@@ -7,6 +7,7 @@ using GameObjects;
 /// </summary>
 public class LevelManager : MonoBehaviour {
 
+    private int numberOfAttempts = 0;
     public bool BuildMode = true;
 
     public DynamicObjectsContainer container; 
@@ -20,7 +21,7 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    private void ToggleBuildMode() {
+    private void toggleBuildMode() {
         if (BuildModeToggleable) {
             foreach (var placeable in container.PlaceableObjects) {
                 placeable.ToggleBuildMode();
@@ -31,44 +32,51 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    private void StartLaserSource() {
+    private void startLaserSource() {
         container.LaserSource.StartMovingBullet();
     }
 
-    private void ResetTarget() {
+    private void resetTarget() {
         container.LaserTarget.ResetTarget();
     }
 
-    private void ResetLaserSource() {
+    private void resetLaserSource() {
         container.LaserSource.ResetBullet();
     }
 
-    private void EnableStartButton() {
+    private void enableStartButton() {
         container.DynamicButton.Enable();
     }
 
-    private void DisableStartButton() {
+    private void disableStartButton() {
         container.DynamicButton.Disable();
     }
 
+    private void updateNumberOfAttempts() {
+        numberOfAttempts += 1;
+        container.Counter.text = numberOfAttempts.ToString();
+        Debug.Log(container.Counter.text);
+    }
+
     public void ClickStart() {
-        StartLaserSource();
-        ToggleBuildMode();
-        DisableStartButton();
+        startLaserSource();
+        toggleBuildMode();
+        disableStartButton();
+        updateNumberOfAttempts();
     }
 
     public void ClickReset() {
         ResetInventory();
-        ToggleBuildMode();
-        ResetTarget(); 
-        ResetLaserSource();
-        EnableStartButton();
+        toggleBuildMode();
+        resetTarget(); 
+        resetLaserSource();
+        enableStartButton();
     }
 
     public void ClickResetBullet() {
-        ResetLaserSource();
-        ToggleBuildMode();
-        EnableStartButton();
+        resetLaserSource();
+        toggleBuildMode();
+        enableStartButton();
     }
 
 }
