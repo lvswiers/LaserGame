@@ -43,9 +43,18 @@ public class LevelManager : MonoBehaviour {
         container.LaserSource.ResetBullet();
     }
 
+    private void EnableStartButton() {
+        container.DynamicButton.Enable();
+    }
+
+    private void DisableStartButton() {
+        container.DynamicButton.Disable();
+    }
+
     public void ClickStart() {
         StartLaserSource();
         ToggleBuildMode();
+        DisableStartButton();
     }
 
     public void ClickReset() {
@@ -53,11 +62,13 @@ public class LevelManager : MonoBehaviour {
         ToggleBuildMode();
         ResetTarget(); 
         ResetLaserSource();
+        EnableStartButton();
     }
 
     public void ClickResetBullet() {
         ResetLaserSource();
         ToggleBuildMode();
+        EnableStartButton();
     }
 
 }
