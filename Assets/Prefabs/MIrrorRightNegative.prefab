@@ -107,6 +107,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7023172403585420409, guid: 9f6ddcd7bd8ad40448fd361acb2efc38,
+        type: 3}
+      propertyPath: Normal.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3524573885561701879, guid: 9f6ddcd7bd8ad40448fd361acb2efc38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f6ddcd7bd8ad40448fd361acb2efc38, type: 3}

@@ -60,6 +60,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2236361376311248118, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+        type: 3}
+      propertyPath: DefaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 07655d88a752344f4b8384fc16940342, type: 2}
+    - target: {fileID: 2236361376311248118, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+        type: 3}
+      propertyPath: DisabledMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 63e0186a4afb11e458625d041cb5281d, type: 2}
     - target: {fileID: 6355127511781750085, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: m_LocalPosition.x

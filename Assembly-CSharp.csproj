@@ -53,7 +53,8 @@
      <Compile Include="Assets\Scripts\Interfaces\IDestructable.cs" />
      <Compile Include="Assets\Scripts\Domain\MenuButton.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IEventGenerator.cs" />
-     <Compile Include="Assets\Scripts\GameObjects\InventoryMirror.cs" />
+     <Compile Include="Assets\Scripts\GameObjects\Portal.cs" />
+     <Compile Include="Assets\Scripts\GameObjects\InventoryItem.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -10,11 +10,12 @@ using UnityEngine.UI;
 public class DynamicObjectsContainer: MonoBehaviour {
 
     private PlaceableObject[] placeableObjects;
-    private InventoryMirror[] inventoryMirrors;
+    private InventoryItem[] inventoryItems;
     private LaserSource laserSource;
     private LaserTarget laserTarget;
     private DynamicButton dynamicButton;
     private Text counter;
+    private Portal[] portals;
 
     public PlaceableObject[] PlaceableObjects {
         get { return placeableObjects; }
@@ -32,12 +33,16 @@ public class DynamicObjectsContainer: MonoBehaviour {
         get { return dynamicButton; }
     }
 
-    public InventoryMirror[] InventoryMirrors {
-        get { return inventoryMirrors; }
+    public InventoryItem[] InventoryItems {
+        get { return inventoryItems; }
     }
 
     public Text Counter {
         get { return counter; }
+    }
+
+    public Portal[] Portals {
+        get { return portals; }
     }
 
     void Start() {
@@ -45,9 +50,10 @@ public class DynamicObjectsContainer: MonoBehaviour {
         laserSource = GetComponentInChildren<LaserSource>();
         laserTarget = GetComponentInChildren<LaserTarget>();
         dynamicButton = GetComponentInChildren<DynamicButton>();
-        inventoryMirrors = GetComponentsInChildren<InventoryMirror>();
+        inventoryItems = GetComponentsInChildren<InventoryItem>();
         GameObject test = GameObject.FindGameObjectWithTag("Counter");
         counter = GameObject.FindGameObjectWithTag("Counter").GetComponent<Text>();
+        portals = GetComponentsInChildren<Portal>();
 
         // Link events of lasertarget to button:
         laserTarget.Event += dynamicButton.OnSuccess;

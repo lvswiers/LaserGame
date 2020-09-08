@@ -117,6 +117,11 @@ PrefabInstance:
       propertyPath: Normal.y
       value: -0.7071068
       objectReference: {fileID: 0}
+    - target: {fileID: 7968789213206737959, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
+        type: 3}
+      propertyPath: Normal.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
     - target: {fileID: 8088009659751260081, guid: 6f92e7f7dbe834bf2884b802ef1177f7,
         type: 3}
       propertyPath: normal.y

@@ -107,5 +107,15 @@ PrefabInstance:
       propertyPath: Normal.y
       value: 0.7071068
       objectReference: {fileID: 0}
+    - target: {fileID: 8363196842633584536, guid: 8815f7bbe22454476a4f5db43221eaf2,
+        type: 3}
+      propertyPath: Normal.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363196842633584536, guid: 8815f7bbe22454476a4f5db43221eaf2,
+        type: 3}
+      propertyPath: Normal.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8815f7bbe22454476a4f5db43221eaf2, type: 3}
