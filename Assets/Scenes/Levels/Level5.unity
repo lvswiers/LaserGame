@@ -2866,6 +2866,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1138086748}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &379642227
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1457349060}
+    m_Modifications:
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721244642044983847, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+        type: 3}
+      propertyPath: m_Name
+      value: Obstruction (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1e5f6d50f35e8b4983ea6d7430cdadb, type: 3}
 --- !u!4 &390051215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2891813507522851238, guid: 98109178438804e88b0fd99c2a8e34ad,
@@ -11719,6 +11798,7 @@ Transform:
   - {fileID: 1159480314}
   - {fileID: 795915247}
   - {fileID: 86921670}
+  - {fileID: 1595938944}
   m_Father: {fileID: 756106057}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12765,6 +12845,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98109178438804e88b0fd99c2a8e34ad, type: 3}
+--- !u!4 &1595938944 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2002274087486302661, guid: c1e5f6d50f35e8b4983ea6d7430cdadb,
+    type: 3}
+  m_PrefabInstance: {fileID: 379642227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1597274032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2891813507522851238, guid: 98109178438804e88b0fd99c2a8e34ad,
