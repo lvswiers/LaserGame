@@ -55,7 +55,6 @@ public class LevelManager : MonoBehaviour {
     private void updateNumberOfAttempts() {
         numberOfAttempts += 1;
         container.Counter.text = numberOfAttempts.ToString();
-        Debug.Log(container.Counter.text);
     }
 
     public void ClickStart() {
