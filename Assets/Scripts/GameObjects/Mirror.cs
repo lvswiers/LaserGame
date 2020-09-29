@@ -12,8 +12,9 @@ namespace GameObjects{
             collisionObject.UpdateVelocity(velocity);    
         }
 
-        protected virtual void OnCollisionEnter(Collision collision) {
-            Projectile projectile = collision.gameObject.GetComponent<Projectile>();
+        // Have not been able to use MeshColliders with OnCollisionEnter yet, so using OnTriggerEnter instead
+        protected void OnTriggerEnter(Collider collider) {
+            Projectile projectile = collider.gameObject.GetComponent<Projectile>();
 
             if (projectile != null) {
                 reflectOnSurface(projectile);
