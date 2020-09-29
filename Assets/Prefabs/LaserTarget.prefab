@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultMaterial: {fileID: 2100000, guid: 5d746d49dc55ae043bf4a3b1ba316522, type: 2}
-  SuccessMaterial: {fileID: 0}
+  SuccessMaterial: {fileID: 2100000, guid: 453865be188d8fa41884a3fe0f92d055, type: 2}
 --- !u!1 &7372038403294351989
 GameObject:
   m_ObjectHideFlags: 0
