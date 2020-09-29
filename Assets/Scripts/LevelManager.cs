@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour {
             foreach (var placeable in container.PlaceableObjects) {
                 placeable.ToggleBuildMode();
             }
-            foreach (var mirror in container.InventoryMirrors) {
+            foreach (var mirror in container.InventoryItems) {
                 mirror.ToggleBuildMode();
             }
         }
@@ -66,10 +66,9 @@ public class LevelManager : MonoBehaviour {
 
     public void ClickReset() {
         ResetInventory();
-        toggleBuildMode();
         resetTarget(); 
-        resetLaserSource();
-        enableStartButton();
+
+        ClickResetBullet();
     }
 
     public void ClickResetBullet() {

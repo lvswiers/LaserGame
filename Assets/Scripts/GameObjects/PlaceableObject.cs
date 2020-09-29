@@ -39,11 +39,12 @@ namespace GameObjects {
         }
 
         private float getClosestGridPoint(float value) {
-           float newValue = Mathf.Round(value/0.5f)*0.5f;
-           if (Mathf.Round(newValue) == newValue) {
-               newValue += (newValue - value)/(newValue - value)*0.5f;
-           }
-           return newValue;
+        //    float newValue = Mathf.Round(value/0.5f)*0.5f;
+        //    if (Mathf.Round(newValue) == newValue) {
+        //        newValue += (newValue - value)/(newValue - value)*0.5f;
+        //    }
+            float newValue = Mathf.Round(value);
+            return newValue;
 
         }
         public void OnMouseUp() {

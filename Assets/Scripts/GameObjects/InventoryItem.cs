@@ -1,11 +1,7 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-using Interfaces;
-using Styling;
 
-// Based on https://answers.unity.com/questions/12322/drag-gameobject-with-mouse.html
 namespace GameObjects {
-    public class InventoryMirror : Mirror
+    public class InventoryItem : MonoBehaviour
     {
         public Material DefaultMaterial;
         public Material DisabledMaterial;

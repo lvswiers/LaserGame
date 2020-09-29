@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class DynamicObjectsContainer: MonoBehaviour {
 
     private PlaceableObject[] placeableObjects;
-    private InventoryMirror[] inventoryMirrors;
+    private InventoryItem[] inventoryItems;
     private LaserSource laserSource;
     private LaserTarget laserTarget;
     private DynamicButton dynamicButton;
@@ -32,8 +32,8 @@ public class DynamicObjectsContainer: MonoBehaviour {
         get { return dynamicButton; }
     }
 
-    public InventoryMirror[] InventoryMirrors {
-        get { return inventoryMirrors; }
+    public InventoryItem[] InventoryItems {
+        get { return inventoryItems; }
     }
 
     public Text Counter {
@@ -45,7 +45,7 @@ public class DynamicObjectsContainer: MonoBehaviour {
         laserSource = GetComponentInChildren<LaserSource>();
         laserTarget = GetComponentInChildren<LaserTarget>();
         dynamicButton = GetComponentInChildren<DynamicButton>();
-        inventoryMirrors = GetComponentsInChildren<InventoryMirror>();
+        inventoryItems = GetComponentsInChildren<InventoryItem>();
         GameObject test = GameObject.FindGameObjectWithTag("Counter");
         counter = GameObject.FindGameObjectWithTag("Counter").GetComponent<Text>();
 
