@@ -28,7 +28,7 @@ namespace GameObjects{
             }
         }
 
-        protected void OnCollisionEnter(Collision collision) {
+        protected virtual void OnCollisionEnter(Collision collision) {
 
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();
             
