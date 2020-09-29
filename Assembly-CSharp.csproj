@@ -53,7 +53,6 @@
      <Compile Include="Assets\Scripts\Interfaces\IDestructable.cs" />
      <Compile Include="Assets\Scripts\Domain\MenuButton.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IEventGenerator.cs" />
-     <Compile Include="Assets\Scripts\GameObjects\Portal.cs" />
      <Compile Include="Assets\Scripts\GameObjects\InventoryItem.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -639,6 +638,18 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:/localCode/laserGame/LaserGame/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+        <HintPath>D:/localCode/laserGame/LaserGame/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+        <HintPath>D:/localCode/laserGame/LaserGame/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+        <HintPath>D:/localCode/laserGame/LaserGame/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+        <HintPath>D:/localCode/laserGame/LaserGame/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
