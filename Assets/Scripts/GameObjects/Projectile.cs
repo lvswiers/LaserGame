@@ -38,5 +38,9 @@ namespace GameObjects {
         public void UpdateVelocity(Vector3 newVelocity) {
             velocity = newVelocity;
         }
+
+        public Vector3 GetPosition() {
+            return Container.transform.position;
+        }
     }
 }

@@ -9,10 +9,9 @@ namespace GameObjects {
 
         protected void Teleport(Projectile projectile) {
             offset = PortalTwin.transform.position - transform.position;
-            float height = projectile.transform.position.z; // Only apply horizontal position of PortalTwin
-            Debug.Log(offset);
+            float heightProjectile = projectile.GetPosition().z;
             Vector3 newPosition = projectile.transform.position + offset;
-            newPosition.z = height;
+            newPosition.z = heightProjectile; // teleport horizontally
             projectile.UpdatePosition(newPosition);
             teleported = true;
             PortalTwin.GetComponentInChildren<Portal>().SetTeleportedTrue();
