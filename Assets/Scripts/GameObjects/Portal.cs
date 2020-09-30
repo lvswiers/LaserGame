@@ -5,6 +5,7 @@ namespace GameObjects {
 
         public GameObject PortalTwin;
         public Material PortalDisabledMaterial;
+        public Material RegularMaterial;
         private bool teleported = false;
         private Vector3 offset;
 
@@ -48,8 +49,9 @@ namespace GameObjects {
             teleported = true;
         }
 
-        public void ResetTeleported() {
+        public void ResetPortals() {
             teleported = false;
+            GetComponent<Renderer>().material = RegularMaterial;
         }
     }
 }

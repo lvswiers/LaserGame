@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour {
 
     private void resetPortals() {
         foreach (var portal in container.Portals) {
-            portal.ResetTeleported();
+            portal.ResetPortals();
         }
     }
 
