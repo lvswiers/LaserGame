@@ -17,6 +17,7 @@ namespace GameObjects{
             Vector3 velocity = collisionObject.Velocity;
             velocity = velocity - 2 * (Vector3.Dot(velocity, normal)* normal);
             collisionObject.UpdateVelocity(velocity);    
+            Debug.Log("reflect");
         }
 
         private bool nonMirrorPlane(Vector3 normal) {
