@@ -15,6 +15,7 @@ public class DynamicObjectsContainer: MonoBehaviour {
     private LaserTarget laserTarget;
     private DynamicButton dynamicButton;
     private Text counter;
+    private Portal[] portals;
 
     public PlaceableObject[] PlaceableObjects {
         get { return placeableObjects; }
@@ -40,6 +41,11 @@ public class DynamicObjectsContainer: MonoBehaviour {
         get { return counter; }
     }
 
+    public Portal[] Portals {
+        get { return portals; }
+    }
+    
+
     void Start() {
         placeableObjects = GetComponentsInChildren<PlaceableObject>();
         laserSource = GetComponentInChildren<LaserSource>();
@@ -48,6 +54,7 @@ public class DynamicObjectsContainer: MonoBehaviour {
         inventoryItems = GetComponentsInChildren<InventoryItem>();
         GameObject test = GameObject.FindGameObjectWithTag("Counter");
         counter = GameObject.FindGameObjectWithTag("Counter").GetComponent<Text>();
+        portals = GetComponentsInChildren<Portal>();
 
         // Link events of lasertarget to button:
         laserTarget.Event += dynamicButton.OnSuccess;
