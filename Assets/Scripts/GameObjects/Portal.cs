@@ -26,6 +26,9 @@ namespace GameObjects {
                     if (teleported == false) { // to avoid incremental teleporting between the mirrors
                         base.OnCollisionEnter(collision);
                         Teleport(projectile);
+                    } else {
+                        // Now it acts as a regular mirror
+                        base.OnCollisionEnter(collision);
                     }
                 }
             }
