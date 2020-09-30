@@ -57,6 +57,12 @@ public class LevelManager : MonoBehaviour {
         container.Counter.text = numberOfAttempts.ToString();
     }
 
+    private void resetPortals() {
+        foreach (var portal in container.Portals) {
+            portal.ResetTeleported();
+        }
+    }
+
     public void ClickStart() {
         startLaserSource();
         toggleBuildMode();
@@ -75,6 +81,7 @@ public class LevelManager : MonoBehaviour {
         resetLaserSource();
         toggleBuildMode();
         enableStartButton();
+        resetPortals();
     }
 
 }
