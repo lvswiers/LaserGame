@@ -5,7 +5,7 @@ namespace GameObjects {
     public class LaserSource: MonoBehaviour {
 
         public GameObject BulletPrefab;
-        public float Speed;
+        public Vector3 StartingVelocity = new Vector3(-5, 0, 0);
         private GameObject bulletContainer;
         private Bullet bullet;
         private Wall wall; 
@@ -19,7 +19,7 @@ namespace GameObjects {
             bulletContainer = Instantiate(BulletPrefab);
             bulletContainer.transform.parent = this.transform;
             bullet = bulletContainer.GetComponentInChildren<Bullet>();
-            bullet.startVelocity = new Vector3(-1f,0f,0f) * Speed;
+            bullet.startVelocity = StartingVelocity;
 
             // Set position of bullet to position of this object, but ignore the height of the object so the projectile follows the ground
             Vector3 startingPosition = transform.position;
