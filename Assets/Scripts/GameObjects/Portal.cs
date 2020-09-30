@@ -4,6 +4,7 @@ namespace GameObjects {
     public class Portal: Mirror {
 
         public GameObject PortalTwin;
+        public Material PortalDisabledMaterial;
         private bool teleported = false;
         private Vector3 offset;
 
@@ -13,8 +14,13 @@ namespace GameObjects {
             Vector3 newPosition = projectile.transform.position + offset;
             newPosition.z = heightProjectile; // teleport horizontally
             projectile.UpdatePosition(newPosition);
+
+            Portal portalTwinPortal = PortalTwin.GetComponentInChildren<Portal>();
             teleported = true;
-            PortalTwin.GetComponentInChildren<Portal>().SetTeleportedTrue();
+            portalTwinPortal.SetTeleportedTrue();
+
+            SetDisabledColour();
+            portalTwinPortal.SetDisabledColour();
         }
 
         protected override void OnCollisionEnter(Collision collision) {
@@ -32,6 +38,10 @@ namespace GameObjects {
                     }
                 }
             }
+        }
+
+        public void SetDisabledColour() {
+            GetComponent<Renderer>().material = PortalDisabledMaterial;
         }
 
         public void SetTeleportedTrue() {

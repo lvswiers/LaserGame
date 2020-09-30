@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpecialNormal: {x: 0, y: 0, z: 0}
   PortalTwin: {fileID: 0}
+  PortalDisabledMaterial: {fileID: 2100000, guid: 1f0708b28735eb244b81c444be89034d,
+    type: 2}
 --- !u!1001 &709590427254309033
 PrefabInstance:
   m_ObjectHideFlags: 0
