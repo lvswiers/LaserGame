@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour {
 
     public bool BuildModeToggleable = true;
 
+    private bool isShooting = false;
+
     public void ResetInventory() {
         foreach (var placeable in container.PlaceableObjects)
         {
@@ -64,6 +66,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void ClickStart() {
+        isShooting = true;
         startLaserSource();
         toggleBuildMode();
         disableStartButton();
@@ -79,9 +82,13 @@ public class LevelManager : MonoBehaviour {
 
     public void ClickResetBullet() {
         resetLaserSource();
-        toggleBuildMode();
         enableStartButton();
         resetPortals();
+
+        if (isShooting) {
+            toggleBuildMode();
+            isShooting = false;
+        }
     }
 
 }
