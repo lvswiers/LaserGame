@@ -4,42 +4,68 @@ namespace GameObjects {
     public class Portal: Mirror {
 
         public GameObject PortalTwin;
+        private Portal portalTwinPortal;
         public Material PortalDisabledMaterial;
         public Material RegularMaterial;
         private bool teleported = false;
         private Vector3 offset;
+        private int bufferCycleCount;
+        private bool buffering = false;
+        private int numberOfBufferCycles = 3;
+
+        void Start() {
+            base.Start();
+            portalTwinPortal = PortalTwin.GetComponentInChildren<Portal>();
+        }
 
         protected void Teleport(Projectile projectile) {
             offset = PortalTwin.transform.position - transform.position;
-            Debug.Log(offset);
             float heightProjectile = projectile.GetPosition().z;
             Vector3 newPosition = projectile.transform.position + offset;
             newPosition.z = heightProjectile; // teleport horizontally
             projectile.UpdatePosition(newPosition);
 
-            Portal portalTwinPortal = PortalTwin.GetComponentInChildren<Portal>();
+            // Turn on teleported state in both portals
             teleported = true;
             portalTwinPortal.SetTeleportedTrue();
 
+            // Set colour of both portals
             SetDisabledColour();
             portalTwinPortal.SetDisabledColour();
+
+            // Turn on buffering on both portals
+            StartBuffering();
+            portalTwinPortal.StartBuffering();
+        }
+
+        void Update() {
+            if (buffering) {
+                bufferCycleCount += 1;
+                if (bufferCycleCount > numberOfBufferCycles) {
+                    buffering = false;
+                }
+
+            }
         }
 
         protected override void OnCollisionEnter(Collision collision) {
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();
-            if (projectile != null) {
+            Debug.Log($"portal {GetHashCode()} triggered");
 
-                if (projectile != null) {
-                    
-                    if (teleported == false) { // to avoid incremental teleporting between the mirrors
-                        base.OnCollisionEnter(collision);
-                        Teleport(projectile);
-                    } else {
-                        // Now it acts as a regular mirror
-                        base.OnCollisionEnter(collision);
-                    }
+            if (projectile != null && buffering == false) {
+                if (teleported == false) { // to avoid incremental teleporting between the mirrors
+                    base.OnCollisionEnter(collision);
+                    Teleport(projectile);
+                } else {
+                    // Now it acts as a regular mirror
+                    base.OnCollisionEnter(collision);
                 }
             }
+      
+        }
+
+        public void StartBuffering() {
+            buffering = true;
         }
 
         public void SetDisabledColour() {
@@ -53,6 +79,8 @@ namespace GameObjects {
         public void ResetPortals() {
             teleported = false;
             GetComponent<Renderer>().material = RegularMaterial;
+            buffering = false;
+            bufferCycleCount = 0;
         }
     }
 }

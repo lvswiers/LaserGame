@@ -5,7 +5,7 @@ namespace GameObjects{
         public Vector3 SpecialNormal;
         private bool useSpecialNormal = true;
 
-        void Start() {
+        public void Start() {
             if (SpecialNormal == new Vector3(0,0,0)) {
                 useSpecialNormal = false;
             }
@@ -48,7 +48,6 @@ namespace GameObjects{
                         normal = collisionNormal;
                     }
                 }
-
                 reflectOnSurface(projectile, normal);
             }
         }
