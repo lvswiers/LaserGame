@@ -16,6 +16,7 @@ MonoBehaviour:
   PortalTwin: {fileID: 0}
   PortalDisabledMaterial: {fileID: 2100000, guid: 1f0708b28735eb244b81c444be89034d,
     type: 2}
+  RegularMaterial: {fileID: 2100000, guid: 44798f26d64c24c4db5bc61e42a1620d, type: 2}
 --- !u!1001 &709590427254309033
 PrefabInstance:
   m_ObjectHideFlags: 0
