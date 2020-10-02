@@ -11,7 +11,7 @@ namespace GameObjects {
 
         private void applyAnimation(){
             BulletSphere.transform.localScale *= 1.01f; 
-            velocity *= 0.8f;
+            velocity *= 0; // I would prefer a deceleration that is not instant, but this does not work well with low frame rates (todo?)
         }
 
         override protected void Update() {
