@@ -50,7 +50,6 @@ namespace GameObjects {
 
         protected override void OnCollisionEnter(Collision collision) {
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();
-            Debug.Log($"portal {GetHashCode()} triggered");
 
             if (projectile != null && buffering == false) {
                 if (teleported == false) { // to avoid incremental teleporting between the mirrors
