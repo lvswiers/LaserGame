@@ -891,8 +891,8 @@ Transform:
   - {fileID: 603326723}
   - {fileID: 313453347}
   - {fileID: 838297078}
-  - {fileID: 1141380336}
   - {fileID: 1723816235}
+  - {fileID: 1141380336}
   - {fileID: 1351941728}
   - {fileID: 1160679720}
   - {fileID: 723975740}
@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 97201906520318664, guid: 062c5f5ea31474ff0831da5958718ce2,
     type: 3}
-  Speed: 5
+  StartingVelocity: {x: -5, y: 0, z: 0}
 --- !u!1001 &148623459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4280,7 +4280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482958160}
   m_LocalRotation: {x: 0.03487823, y: -0.034878325, z: 0.0012179777, w: 0.99878204}
-  m_LocalPosition: {x: 20.5, y: 20.7, z: -301.2}
+  m_LocalPosition: {x: 20.8, y: 20.7, z: -301.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
