@@ -167,8 +167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -230}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchoredPosition: {x: -10, y: -220}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1156853916868957264
 CanvasRenderer:
@@ -592,8 +592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -20}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchoredPosition: {x: -10, y: -10}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1156853918322026124
 CanvasRenderer:
@@ -829,8 +829,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -90}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchoredPosition: {x: -10, y: -80}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &1156853918629041733
 CanvasRenderer:
@@ -1094,7 +1094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: 'Reset bullet only
+  m_Text: 'Reset bullet
 
 '
 --- !u!1 &8663793225853809568
@@ -1133,8 +1133,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -160}
-  m_SizeDelta: {x: 100, y: 30}
+  m_AnchoredPosition: {x: -10, y: -150}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &6397293217749308994
 CanvasRenderer:

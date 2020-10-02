@@ -28,6 +28,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6e2e082cc3204478f3b0399ad26897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpecialNormal: {x: 0, y: 0, z: 0}
 --- !u!114 &2367371368539104153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301bc0a650afbde49a56a41780c09533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultMaterial: {fileID: 2100000, guid: 7587489c486b5497ca4174ee7daa18df, type: 2}
+  DefaultMaterial: {fileID: 2100000, guid: 9f13281081ef3204589770ce13a312eb, type: 2}
   DisabledMaterial: {fileID: 2100000, guid: 1f0708b28735eb244b81c444be89034d, type: 2}
   buildMode: 1
 --- !u!1 &4182480530045050958
@@ -187,7 +188,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7587489c486b5497ca4174ee7daa18df, type: 2}
+      objectReference: {fileID: 2100000, guid: 9f13281081ef3204589770ce13a312eb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2b3e4112a9665a48841fd2d6e8ea947, type: 3}
 --- !u!1 &424128828838127531 stripped
