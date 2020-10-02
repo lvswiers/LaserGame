@@ -29,9 +29,9 @@ namespace GameObjects {
             teleported = true;
             portalTwinPortal.SetTeleportedTrue();
 
-            // Set colour of both portals
-            SetDisabledColour();
-            portalTwinPortal.SetDisabledColour();
+            // Set material of both portals
+            SetDisabledMaterial();
+            portalTwinPortal.SetDisabledMaterial();
 
             // Turn on buffering on both portals
             StartBuffering();
@@ -67,7 +67,7 @@ namespace GameObjects {
             buffering = true;
         }
 
-        public void SetDisabledColour() {
+        public void SetDisabledMaterial() {
             GetComponent<Renderer>().material = PortalDisabledMaterial;
         }
 
